@@ -65,20 +65,20 @@ public class Exercicios {
         }
         System.out.println("O maior e menor numero da linha 5 são: " + maiorLinha + " e " + menorLinha );
         System.out.println("O maior e menor numero da coluna 7 são: " + maiorColuna + " e " + menorColuna );*/
-
+    /*Exercico 3
         Scanner scan = new Scanner(System.in);
         System.out.println("Digite os valor da matriz de 9 numeros:");
         int[][] matrizTeclado = new int[3][3];
-        int par = 0;
-        int impar = 0;
+        int qtdPar = 0;
+        int qtdImpar = 0;
         for (int i = 0; i < matrizTeclado.length; i++) {
             for (int j = 0; j < matrizTeclado[i].length; j++) {
                 matrizTeclado[i][j] = scan.nextInt();
 
                 if (matrizTeclado[i][j] % 2 == 0) {
-                    par++;
+                    qtdPar++;
                 } else {
-                    impar++;
+                    qtdImpar++;
                 }
             }
         }
@@ -88,8 +88,84 @@ public class Exercicios {
             }
             System.out.println();
         }
-        System.out.println("Quantidade numeros pares: " + par);
-        System.out.println("Quantidade numeros impares: "+ impar);
+        System.out.println("Quantidade numeros pares: " + qtdPar);
+        System.out.println("Quantidade numeros impares: "+ qtdImpar);*/
+
+        Scanner scan = new Scanner(System.in);
+        String[][] compromissos = new String[30][24] ;
+        boolean sair = false;
+        byte opcao;
+
+        while(!sair) {
+            System.out.println("Digite 1 para adicionar compromisso.");
+            System.out.println("Digite 2 para verificar compromisso.");
+            System.out.println("Digite 0 para sair.");
+
+            opcao = scan.nextByte();
+
+            if (opcao == 1) { //adicionar compromisso
+                int dia=0;
+                boolean diaValido = false;
+                while(!diaValido) {
+                    System.out.println("Digite o dia:");
+                    dia = scan.nextInt();
+                    if (dia > 0 && dia <= 31) {
+                        diaValido = true;
+                    } else {
+                        System.out.println("Dia invalido, digite novamente.");
+                    }
+                }
+                int hora=0;
+                boolean horaValida = false;
+                while (!horaValida) {
+                    System.out.println("Digite a hora:");
+                    hora = scan.nextInt();
+                    if (hora >= 0 && hora <= 24) {
+                        horaValida = true;
+                    } else {
+                        System.out.println("Hora invalida, digite novamente.");
+                    }
+                }
+                dia--;
+                System.out.println("Digite seu compromisso:");
+                compromissos[dia][hora] = scan.next();
+
+
+
+            } else if (opcao == 2) { //consultar compromisso
+                int dia=0;
+                boolean diaValido = false;
+                while(!diaValido) {
+                    System.out.println("Digite o dia:");
+                    dia = scan.nextInt();
+                    if (dia > 0 && dia <= 31) {
+                        diaValido = true;
+                    } else {
+                        System.out.println("Dia invalido, digite novamente.");
+                    }
+                }
+                int hora=0;
+                boolean horaValida = false;
+                while (!horaValida) {
+                    System.out.println("Digite a hora:");
+                    hora = scan.nextInt();
+                    if (hora >= 0 && hora <= 24) {
+                        horaValida = true;
+                    } else {
+                        System.out.println("Hora invalida, digite novamente.");
+                    }
+                }
+                dia--;
+                System.out.println("Seu compromisso é: " + compromissos[dia][hora]);
+
+
+            } else if (opcao == 0) { //sair do app
+                sair = true;
+
+            } else {
+                System.out.println("Opção invalida. Digite novamente !");
+            }
+        }
     }
 }
 
