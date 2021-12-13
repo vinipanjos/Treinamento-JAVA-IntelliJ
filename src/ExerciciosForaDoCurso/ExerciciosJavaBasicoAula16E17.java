@@ -169,14 +169,14 @@ public class ExerciciosJavaBasicoAula16E17 {
             soma += i;
         }
         System.out.print(soma);*/
-
+    /*Exercicio 12
         Scanner scan = new Scanner(System.in);
         System.out.println("Digite o numero para apresentarmos a tabuada:");
         int num = scan.nextInt();
         System.out.println("Tabuada de " + num);
         for (int i = 1; i <= 10; i++){
             System.out.println(num + " x " + i + " = " + (num * i ));
-        }
+        }*/
     }
 }
 

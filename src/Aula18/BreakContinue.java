@@ -42,7 +42,7 @@ public class BreakContinue {
 			System.out.println(i);
 		}*/
 
-        Scanner scan = new Scanner(System.in);
+        /*Scanner scan = new Scanner(System.in);
 
         System.out.println("Entre com um numero: ");
         int num = scan.nextInt();
@@ -56,7 +56,7 @@ public class BreakContinue {
                 continue;
             }
             System.out.println("O valor de i é : " + i);
-        }
+        }*/
 
 
     }
