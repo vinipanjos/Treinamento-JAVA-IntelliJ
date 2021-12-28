@@ -1,3 +1,3 @@
 # Projetos aprendidos no Curso Java.
-Aluno:Vinicius Pinheiro dos Anjos
-Aulas e exercicios: Loiane Graner e plataforma DIO
+
+Estou utilizando como fonte aulas e exercicios disponibilizados pela Loiane Graner e plataforma DIO.
