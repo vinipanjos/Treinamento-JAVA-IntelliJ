@@ -1,6 +1,6 @@
 package Aula44A46.Exercicios.Ex01;
 
-public class Triangulo extends Figura2D{
+public class Triangulo extends Figura2D implements DimensaoSuperficial{
 
     private double base;
     private double altura;
@@ -30,11 +30,12 @@ public class Triangulo extends Figura2D{
     public String toString() {
         return super.toString() + "Triangulo{" +
                 "base=" + base +
-                ", altura=" + altura +" Area = " + areaTriangulo()+
+                ", altura=" + altura +" Area = " + calcularArea()+
                 '}';
     }
-    public double areaTriangulo(){
 
+    @Override
+    public double calcularArea() {
         return (base*altura)/2;
     }
 }

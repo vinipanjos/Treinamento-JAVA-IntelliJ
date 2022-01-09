@@ -310,7 +310,7 @@ public class Exercicios {
                 if (jogoVelha[linha][coluna]=='X' || jogoVelha[linha][coluna]=='O' ){
                     System.out.println("Posição posição já usada");
                 }else{
-                    jogoVelha[linha][coluna] = sinal;
+                    jogoVelha[linha][coluna] = 'X';
                     jogada++;
                 }
                 //imprimir tabuleiro

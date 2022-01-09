@@ -1,6 +1,6 @@
 package Aula44A46.Exercicios.Ex01;
 
-public class Cubo extends Figura3D{
+public class Cubo extends Figura3D implements DimensaoVolumetrica{
 
     private double lado;
 
@@ -19,10 +19,12 @@ public class Cubo extends Figura3D{
     @Override
     public String toString() {
         return super.toString() + "Cubo{" +
-                "lado=" + lado + "Area = " + areaCubo()+
+                "lado=" + lado + "Area = " + calcularVolume()+
                 '}';
     }
-    public double areaCubo(){
+
+    @Override
+    public double calcularVolume() {
         return lado*lado*lado;
     }
 }

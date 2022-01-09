@@ -1,6 +1,6 @@
 package Aula44A46.Exercicios.Ex01;
 
-public class Piramide extends Figura3D{
+public class Piramide extends Figura3D implements DimensaoVolumetrica{
 
     private double ladoBase;
     private double altura;
@@ -29,11 +29,13 @@ public class Piramide extends Figura3D{
     @Override
     public String toString() {
         return super.toString() + "Piramide{" +
-                "ladoBase=" + ladoBase + " Area = " + areaPiramide() +
+                "ladoBase=" + ladoBase + " Area = " + calcularVolume() +
                 ", altura=" + altura +
                 '}';
     }
-    public double areaPiramide(){
+
+    @Override
+    public double calcularVolume() {
         return ((ladoBase*ladoBase)*altura)/3;
     }
 }

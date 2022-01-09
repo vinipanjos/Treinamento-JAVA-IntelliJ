@@ -1,6 +1,6 @@
 package Aula44A46.Exercicios.Ex01;
 
-public class Esfera extends Figura3D{
+public class Esfera extends Figura3D implements DimensaoVolumetrica{
 
     private double raio;
 
@@ -18,10 +18,12 @@ public class Esfera extends Figura3D{
     @Override
     public String toString() {
         return super.toString() + "Esfera{" +
-                "raio=" + raio + " Area = " + areaEsfera() +
+                "raio=" + raio + " Area = " + calcularVolume() +
                 '}';
     }
-    public double areaEsfera(){
+
+    @Override
+    public double calcularVolume() {
         return 4*Math.PI*(raio*raio);
     }
 }

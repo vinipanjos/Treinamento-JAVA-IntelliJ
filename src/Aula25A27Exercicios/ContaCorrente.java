@@ -3,26 +3,43 @@ package Aula25A27Exercicios;
 public class ContaCorrente {
     int numIdentificacao;
     double saldo;
-    double limite;
+    double limiteEspecial;
     boolean especial;
-    double saque;
     double deposito;
     boolean usoLimite;
+    double valorEspecialUsado;
 
-     void depositar(){
-         saldo = saldo + deposito;
-     }
-     void sacar(){
-         saldo = saldo - saque;
-     }
-     void usoChequeEspecial(){
-         if (saldo<0){
-             usoLimite = true;
-             System.out.println("Cliente utilizando cheque-especial.");
-         }else{
-             usoLimite = false;
-             System.out.println("Cliente usando o saldo.");
+    boolean verificarUsoChequeEspecial(){
+        return saldo < 0;
+    }
+
+    void consultarSaldo(){
+        System.out.println("Saldo da conta é:" + saldo);
+    }
+
+    void depositar(double valorDepositado){
+         saldo += valorDepositado;
+    }
+    boolean realizarSaque(double quantiaASacar){
+         //se tem saldo na conta
+         if(saldo>=quantiaASacar){
+             saldo -= quantiaASacar;
+             return true;
+
+         }else { //se nao tem saldo na conta
+
+             if (especial) {// verificar se o limite especial tem saldo
+                 double limite = limiteEspecial + saldo;
+
+                 if (limite >= quantiaASacar) {
+                     saldo -= quantiaASacar;
+                     return true;
+                 } else {
+                     return false;
+                 }
+             } else {
+                 return false; //não é especial e não tem limite
+             }
          }
      }
-
 }

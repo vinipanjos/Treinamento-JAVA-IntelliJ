@@ -1,6 +1,6 @@
 package Aula44A46.Exercicios.Ex01;
 
-public class Circulo extends Figura2D{
+public class Circulo extends Figura2D implements DimensaoSuperficial{
 
     private double raio;
 
@@ -19,11 +19,12 @@ public class Circulo extends Figura2D{
     @Override
     public String toString() {
         return super.toString() + "Circulo{" +
-                "raio=" + raio + " area = " + areaCirculo() +
+                "raio=" + raio + " area = " + calcularArea() +
                 '}';
     }
-    public double areaCirculo(){
 
+    @Override
+    public double calcularArea() {
         return (raio*raio)*Math.PI;
     }
 }

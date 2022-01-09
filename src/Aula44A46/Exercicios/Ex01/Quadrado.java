@@ -1,6 +1,6 @@
 package Aula44A46.Exercicios.Ex01;
 
-public class Quadrado extends Figura2D{
+public class Quadrado extends Figura2D implements DimensaoSuperficial{
 
     public double lado;
 
@@ -19,10 +19,12 @@ public class Quadrado extends Figura2D{
     @Override
     public String toString() {
         return super.toString() + "Quadrado{" +
-                "lado=" + lado + " area = " + areaQuadrado() +
+                "lado=" + lado + " area = " + calcularArea() +
                 '}';
     }
-    public double areaQuadrado(){
+
+    @Override
+    public double calcularArea() {
         return lado*lado;
     }
 }
